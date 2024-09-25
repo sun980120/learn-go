@@ -37,7 +37,7 @@ func StartRouter() {
 			log.Fatal("BIND JSON ERROR")
 			return
 		}
-		result := dao.CreateMessage(creatreMessage.Msg)
+		result := dao.CreateMessage(creatreMessage.MSG)
 		//result := db.SaveMessage(newMessage)
 		c.IndentedJSON(http.StatusCreated, result)
 	})

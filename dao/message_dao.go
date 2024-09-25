@@ -7,7 +7,7 @@ import (
 
 func CreateMessage(msg string) string {
 	conn := db.Connect()
-	message := model.Message{Msg: msg}
+	message := model.Message{MSG: msg}
 	conn.Create(&message)
 	return "create message"
 }
@@ -31,7 +31,7 @@ func GetAllMessage() []model.Message {
 
 func UpdateMessage(msg model.Message) string {
 	conn := db.Connect()
-	conn.Model(&model.Message{}).Where("id = ?", msg.ID).Update("msg", msg.Msg)
+	conn.Model(&model.Message{}).Where("id = ?", msg.ID).Update("msg", msg.MSG)
 	return "update success"
 }
 
